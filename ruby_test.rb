@@ -35,7 +35,7 @@ end
 # Problem 3. You are running a Rails application with 2 workers (imagine a 2-mongrel cluster or a Passenger with 2 passenger workers). 
 # You have code that looks like this
 
-class CarController
+class CarsController
  def start_engine
   @car = Car.first # bonus: there is a bug here. what is it?
   @car.start_engine
@@ -52,7 +52,7 @@ end
 # 3a. Explain what possible problems could arise when a user hits this code.
 # 3b. Imagine now that we have changed the implementation:
 
-class Car
+class CarsController
  def start_engine
   sleep(30)
  end
