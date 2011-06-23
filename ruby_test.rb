@@ -72,8 +72,7 @@ end
 # z2: goes to status
 # z3: goes to status
 #
-# Explain approximately how long it will take for each user to get a response back from the server. Assume the 'status' action
-# takes 0.01 seconds.
+# Explain approximately how long it will take for each user to get a response back from the server. 
 # 
 # Example: user 'x' will take about 30 seconds. What about y,z1,z2,z3?
 #
