@@ -37,12 +37,13 @@ end
 
 class CarController
  def start_engine
-  @car.start_engine!
+  @car = Car.first # bonus: there is a bug here. what is it?
+  @car.start_engine
  end
 end
 
 class Car
- def start_engine!
+ def start_engine
   api_url = "http://my.cars.com/start_engine?id={self.id}"
   RestClient.post api_url
  end
