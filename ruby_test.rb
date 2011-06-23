@@ -150,3 +150,34 @@ end
 class Car < ActiveRecord::Base
  belongs_to :user
 end
+
+# Problem 9. Here's a piece of code that does several actions. You can see that it has duplicated 
+# error handling, logging, and timeout handling. Design a block helper method that will remove
+# the duplication, and refactor the code to use the block helper. 
+
+logger.info "About to do action1"
+Timeout::timeout(5) do
+ begin
+  action1
+ rescue => e
+  logger.error "Got error: #{e.message}"
+ end
+end
+
+logger.info "About to do action2"
+Timeout::timeout(5) do
+ begin
+  action2
+ rescue => e
+  logger.error "Got error: #{e.message}"
+ end
+end
+
+logger.info "About to do action3"
+Timeout::timeout(5) do
+ begin
+  action3
+ rescue => e
+  logger.error "Got error: #{e.message}"
+ end
+end
