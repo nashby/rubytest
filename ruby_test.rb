@@ -60,3 +60,36 @@ end
 # Let's say 3 users hit this action at the same time (call them x,y,z). Explain approximately how long it will take 
 # for each user to get a response back from the server. Example: user 'x' will take about 30 seconds. What about y and z?
 # How many "requests/second" can your cluster process? What could you do to increase the throughput (requests/second)?
+
+
+# Problem 4. Here's a piece of code to feed my pets. Please clean it up as you see fit.
+
+cat = Cat.new
+dog = Dog.new
+cow = Cow.new
+my_pets = [cat, dog, cow, ]
+
+my_pets.each do |pet|
+ if pet.is_a?(Cat)
+   pet.feed(:milk)
+ elsif pet.is_a?(Cow)
+   pet.feed(:grass)
+ elsif pet.is_a?(Dog)
+   pet.feed(:dogfood)
+ end
+end
+
+class Pet
+ def feed(food)
+   puts "thanks!"
+ end
+end
+
+class Cat < Pet
+end
+
+class Dog < Pet
+end
+
+class Cow < Pet
+end
