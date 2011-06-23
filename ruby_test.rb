@@ -31,3 +31,32 @@ end
 
 class User < ActiveRecord::Base
 end
+
+# Problem 3. You are running a Rails application with 2 workers (imagine a 2-mongrel cluster or a Passenger with 2 passenger workers). 
+# You have code that looks like this
+
+class CarController
+ def start_engine
+  @car.start_engine!
+ end
+end
+
+class Car
+ def start_engine!
+  api_url = "http://my.cars.com/start_engine?id={self.id}"
+  RestClient.post api_url
+ end
+end
+
+# 3a. Explain what possible problems could arise when a user hits this code.
+# 3b. Imagine now that we have changed the implementation:
+
+class Car
+ def start_engine!
+  sleep(30)
+ end
+end
+
+# Let's say 3 users hit this action at the same time (call them x,y,z). Explain approximately how long it will take 
+# for each user to get a response back from the server. Example: user 'x' will take about 30 seconds. What about y and z?
+# How many "requests/second" can your cluster process? What could you do to increase the throughput (requests/second)?
