@@ -65,6 +65,8 @@ class CarsController
  end
 end
 
+# Continued...Now you are running your 2-worker app server in production.
+#
 # Let's say 5 users (call them x,y,z1,z2,z3), hit the following actions in order, one right after the other. 
 # x: goes to start_engine
 # y: goes to drive_away
