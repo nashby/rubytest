@@ -64,12 +64,17 @@ class Car
  end
 end
 
-# Let's say 3 users hit the app at about the same time (call them x,y,z), hitting three actions in order:
+# Let's say 5 users (call them x,y,z1,z2,z3), hit the following actions in order, one right after the other. 
 # x: goes to start_engine
 # y: goes to drive_away
-# z: goes to status
-# Explain approximately how long it will take for each user to get a response back from the server. 
-# Example: user 'x' will take about 30 seconds. What about y and z?
+# z1: goes to status
+# z2: goes to status
+# z3: goes to status
+#
+# Explain approximately how long it will take for each user to get a response back from the server. Assume the 'status' action
+# takes 0.01 seconds.
+# 
+# Example: user 'x' will take about 30 seconds. What about y,z1,z2,z3?
 #
 # Approximately how many requests/second can your cluster process for the action 'start_engine'? What about 'drive_away'? 
 # What could you do to increase the throughput (requests/second)?
