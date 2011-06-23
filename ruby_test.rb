@@ -17,7 +17,7 @@ end
 # what 'fat model, skinny controller' means.
 class CarsController
  def break_random_wheel
-   @car = Car.find(:first, :conditions => "name = #{params[:name]} and user=#{params[:user_id]}")
+   @car = Car.find(:first, :conditions => "name = '#{params[:name]}' and user='#{params[:user_id]}'")
    @wheels = @car.components.find(:all, :conditions => "type = 'wheel'")
    random_wheel =  (rand*4).round
    @wheels[random_wheel].break!
