@@ -5,7 +5,7 @@
 def bracketed_list(values)
  temp=""
  temp += "["
- values.each {|val| temp += "#{val.to_s} "}
+ values.each {|val| temp += "#{val.to_s}, "}
  temp += "]"
  return temp
 end
