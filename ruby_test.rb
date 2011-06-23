@@ -52,14 +52,27 @@ end
 # 3b. Imagine now that we have changed the implementation:
 
 class Car
- def start_engine!
+ def start_engine
   sleep(30)
+ end
+ def drive_away
+  sleep(10)
+ end
+ def status
+  sleep(5)
+  render :text => "All good!"
  end
 end
 
-# Let's say 3 users hit this action at the same time (call them x,y,z). Explain approximately how long it will take 
-# for each user to get a response back from the server. Example: user 'x' will take about 30 seconds. What about y and z?
-# How many "requests/second" can your cluster process? What could you do to increase the throughput (requests/second)?
+# Let's say 3 users hit the app at about the same time (call them x,y,z), hitting three actions in order:
+# x: goes to start_engine
+# y: goes to drive_away
+# z: goes to status
+# Explain approximately how long it will take for each user to get a response back from the server. 
+# Example: user 'x' will take about 30 seconds. What about y and z?
+#
+# Approximately how many requests/second can your cluster process for the action 'start_engine'? What about 'drive_away'? 
+# What could you do to increase the throughput (requests/second)?
 
 
 # Problem 4. Here's a piece of code to feed my pets. Please clean it up as you see fit.
@@ -106,6 +119,7 @@ class Article < ActiveRecord::Base
 end
 
 # Problem 6. Explain in a few sentences the difference between a ruby Class and Module and when it's appropriate to use either one.
+
 # Problem 7. Explain the problem with this code
 
 class UsersController
@@ -114,7 +128,7 @@ class UsersController
  end
 end
 
-# Problem 8. Explain what's wrong with this code and fix it
+# Problem 8. Explain what's wrong with this code and fix it. (Hint: named_scope)
 
 class User < ActiveRecord::Base
  has_many :cars
