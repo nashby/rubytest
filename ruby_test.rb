@@ -167,7 +167,7 @@ Timeout::timeout(5) do
 end
 
 logger.info "About to do action2"
-Timeout::timeout(5) do
+Timeout::timeout(10) do
  begin
   action2
  rescue => e
@@ -176,7 +176,7 @@ Timeout::timeout(5) do
 end
 
 logger.info "About to do action3"
-Timeout::timeout(5) do
+Timeout::timeout(7) do
  begin
   action3
  rescue => e
