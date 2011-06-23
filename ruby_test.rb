@@ -93,3 +93,41 @@ end
 
 class Cow < Pet
 end
+
+# Problem 5. Improve this code
+
+class ArticlesController < ApplicationController 
+ def index
+  @articles = Article.find_all_by_state(Article::STATES[:published], :order => "created_at DESC")
+ end
+end
+
+class Article < ActiveRecord::Base
+end
+
+# Problem 6. Explain in a few sentences the difference between a ruby Class and Module and when it's appropriate to use either one.
+# Problem 7. Explain the problem with this code
+
+class UsersController
+ def find_active_users
+  User.find(:all).select {|user| user.active?}
+ end
+end
+
+# Problem 8. Explain what's wrong with this code and fix it
+
+class User < ActiveRecord::Base
+ has_many :cars
+
+ def red_cars
+  cars.scoped(:color => :red)
+ end
+
+ def green_cars
+  cars.scoped(:color => :green)
+ end
+end
+
+class Car < ActiveRecord::Base
+ belongs_to :user
+end
