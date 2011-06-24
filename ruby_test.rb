@@ -1,3 +1,9 @@
+# Instructions for this test: 
+# 1. Please clone this gist as a git repo locally
+# 2. Create a branch called 'answers'
+# 3. Edit this file and save your work in the 'answers' branch
+# 4. Push the result back to github.
+
 # Problem 1. Explain briefly what this code does, fix any bugs, then clean it up however you 
 # like and write a unit test using Test::Unit to show that it works. Use shoulda gem for writing
 # your tests and write them in context/shoulda style
