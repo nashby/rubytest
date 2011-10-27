@@ -2,7 +2,6 @@
 # 1. Please clone this gist as a git repo locally
 # 2. Create your own github repo called 'rubytest' (or a name of your choice) and add this repo as a new remote to the cloned repo
 # 3. Edit this file to answer the questions, and push this file with answers back out to your own 'rubytest' repo. 
-# 4. Share your github repo with github users 'nclements' and 'skwp'.
 
 # Problem 1. Explain briefly what this code does, fix any bugs, then clean it up however you 
 # like and write a unit test using Test::Unit to show that it works. Use shoulda gem for writing
