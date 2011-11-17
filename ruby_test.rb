@@ -4,7 +4,7 @@
 # 3. Edit this file to answer the questions, and push this file with answers back out to your own 'rubytest' repo. 
 
 # Problem 1. Explain briefly what this code does, fix any bugs, then clean it up however you 
-# like and write two unit tests, one using Test::Unit, and one using RSpec.
+# like and write a unit test using RSpec.
 
 def bracketed_list(values)
  temp=""
