@@ -158,8 +158,8 @@ end
 
 # You can increase the throughput by:
 # 1. adding more workers
-# 2. move these jobs to background (using delayed_job gem for example)
-# 3. use some event-processing library( event_machine for example)
+# 2. moving these jobs to background (using delayed_job gem for example)
+# 3. using some event-processing library( event_machine for example)
 
 # Problem 4. Here's a piece of code to feed my pets. Please clean it up as you see fit.
 
