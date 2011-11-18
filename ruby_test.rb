@@ -17,34 +17,71 @@ def bracketed_list(values)
 end
 
 def my_bracketed_list_1(values)
-  "#{values}" # actually, it calls values.inspect under the hood
+  "#{values}" if values.is_a?(Array)
 end
 
 def my_bracketed_list_2(values)
-  "[#{values.join(', ')}]"
+  "[#{values.join(', ')}]" if values.is_a?(Array)
 end
 
 def my_bracketed_list_3(values)
-  values.to_s
+  values.to_s if values.is_a?(Array)
 end
 
 describe "my_bracketed_list_1" do
-  it 'return the string representation of the array' do
+  it 'returns the string representation of the array' do
     my_bracketed_list_1([1, 2, 3, 4, 5]).should == "[1, 2, 3, 4, 5]"
+  end
+
+  it 'returns the string representation of the array with length == 1' do
+    my_bracketed_list_1([1]).should == "[1]"
+  end
+
+  it 'returns the string representation of the empty array' do
+    my_bracketed_list_1([]).should == "[]"
+  end
+
+  it 'returns nil if param is not Array' do
+    my_bracketed_list_1({:a => 1}).should be_nil
   end
 end
 
 describe "my_bracketed_list_2" do
-  it 'return the string representation of the array' do
+  it 'returns the string representation of the array' do
     my_bracketed_list_2([1, 2, 3, 4, 5]).should == "[1, 2, 3, 4, 5]"
+  end
+
+  it 'returns the string representation of the array with length == 1' do
+    my_bracketed_list_2([1]).should == "[1]"
+  end
+
+  it 'returns the string representation of the empty array' do
+    my_bracketed_list_2([]).should == "[]"
+  end
+
+  it 'returns nil if param is not Array' do
+    my_bracketed_list_3({:a => 1}).should be_nil
   end
 end
 
 describe "my_bracketed_list_3" do
-  it 'return the string representation of the array' do
+  it 'returns the string representation of the array' do
     my_bracketed_list_3([1, 2, 3, 4, 5]).should == "[1, 2, 3, 4, 5]"
   end
+
+  it 'returns the string representation of the array with length == 1' do
+    my_bracketed_list_3([1]).should == "[1]"
+  end
+
+  it 'returns the string representation of the empty array' do
+    my_bracketed_list_3([]).should == "[]"
+  end
+
+  it 'returns nil if param is not Array' do
+    my_bracketed_list_3({:a => 1}).should be_nil
+  end
 end
+
 
 # Problem 2. This is a piece of code found in a fictional Rails controller and model.
 #
@@ -87,7 +124,7 @@ class User < ActiveRecord::Base
   has_many :cars, :dependent => :destroy
 end
 
-сlass Component < ActiveRecord::Base
+class Component < ActiveRecord::Base
   belongs_to :car
 
   scope :wheels, where(:kind => 'wheel')
@@ -255,6 +292,6 @@ def log_action(logger, info, timeout_time)
   end
 end
 
-log_action(logger, "About to do action1", 5) { action1 }
+log_action(logger, "About to do action1", 5)  { action1 }
 log_action(logger, "About to do action2", 10) { action2 }
 log_action(logger, "About to do action3", 7) { action3 }
